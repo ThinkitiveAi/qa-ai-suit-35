@@ -1,0 +1,31 @@
+name: Run Playwright Test on Chrome
+
+on:
+  workflow_dispatch:  # Manual trigger
+  schedule:           # Automatic run at 10:00 AM IST (4:30 AM UTC)
+    - cron: '30 4 * * *'  # UTC time
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install playwright-test
+        run: npm install --save-dev @playwright/test
+
+      - name: Install only Chrome for Playwright
+        run: npx playwright install chromium
+
+      - name: Run Playwright tests on Chrome
+        run: npx playwright test tests/login.test.ts --project=chromium --config=playwright.config.ts
