@@ -1,0 +1,24 @@
+{
+  "name": "healthcare-api-automation",
+  "version": "1.0.0",
+  "description": "Playwright API automation framework for healthcare platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:debug": "npx playwright test --debug",
+    "test:postman": "npx playwright test healthcare-postman-workflow.spec.ts",
+    "test:postman:headed": "npx playwright test healthcare-postman-workflow.spec.ts --headed",
+    "test:postman:debug": "npx playwright test healthcare-postman-workflow.spec.ts --debug",
+    "test:original": "npx playwright test healthcare-workflow.spec.ts",
+    "install:playwright": "npx playwright install",
+    "build": "tsc",
+    "clean": "rimraf dist test-results playwright-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.1",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "rimraf": "^5.0.0"
+  }
+}

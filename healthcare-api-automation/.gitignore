@@ -1,0 +1,19 @@
+node_modules/
+test-results/
+playwright-report/
+playwright/.cache/
+*.log
+.env
+.DS_Store
+
+# TypeScript
+*.tsbuildinfo
+
+# IDE
+.vscode/
+.idea/
+
+# Test artifacts
+screenshots/
+videos/
+traces/
