@@ -1,0 +1,40 @@
+{
+  "name": "ecare-api-testing-framework",
+  "version": "1.0.0",
+  "description": "Playwright API Testing Framework for ECareHealth Clinician Management",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:debug": "npx playwright test --debug",
+    "test:ui": "npx playwright test --ui",
+    "test:headed": "npx playwright test --headed",
+    "test:report": "npx playwright show-report",
+    "test:staging": "TEST_ENV=staging npx playwright test",
+    "test:prod": "TEST_ENV=production npx playwright test",
+    "test:dev": "TEST_ENV=development npx playwright test",
+    "install:browsers": "npx playwright install",
+    "setup": "node scripts/setup.js",
+    "discover-endpoints": "node scripts/discover-endpoints.js",
+    "update-token": "node scripts/token-helper.js",
+    "test-auth": "node scripts/test-auth.js",
+    "check-availability": "node scripts/check-availability.js"
+  },
+  "keywords": [
+    "playwright",
+    "api-testing",
+    "automation",
+    "healthcare"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.54.2",
+    "@types/node": "^20.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "faker": "^6.6.6",
+    "moment": "^2.29.4",
+    "playwright": "^1.54.1"
+  }
+}
